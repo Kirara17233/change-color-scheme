@@ -2,7 +2,7 @@
 #define xmobar_hpp
 
 #include <iostream>
-#include "common/scheme.hpp"
+#include "scheme.hpp"
 
 namespace xmobar
 {

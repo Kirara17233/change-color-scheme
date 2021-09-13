@@ -4,8 +4,10 @@
 		{
 			"type": "shell",
 			"label": "g++ build active file",
-			"command": "make",
-			"args": [],
+			"command": "sudo",
+			"args": [
+				"make"
+			],
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},

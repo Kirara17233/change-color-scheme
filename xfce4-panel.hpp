@@ -2,7 +2,7 @@
 #define xfce4_panel_hpp
 
 #include <iostream>
-#include "common/scheme.hpp"
+#include "scheme.hpp"
 
 namespace xfce4_panel
 {

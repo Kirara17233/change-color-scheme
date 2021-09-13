@@ -1,25 +1,15 @@
-cc = g++
+CC = g++
 
-flags = -g -Wall
+CFLAGS = -g -Wall
 
-objects = main.o termonad.o xfce4-panel.o xmobar.o xmonad.o common/scheme.o
+TARGET = scheme
+SRCS = $(wildcard *.cpp)
+OBJS = $(patsubst %cpp, %o, $(SRCS))
+all : $(TARGET)
+	rm *.o
 
-target = scheme
+%.o : %.cpp
+	$(CC) $(CFLAGS) -c $<
 
-edit : $(objects)
-	$(cc) $(flags) -o $(target) $(objects)
-
-scheme.o : scheme.cpp
-	$(cc) -c common/scheme.cpp
-xmonad.o : xmonad.cpp
-	$(cc) -c xmonad.cpp
-xmobar.o : xmobar.cpp
-	$(cc) -c xmobar.cpp
-xfce4-panel.o : xfce4-panel.cpp
-	$(cc) -c xfce4-panel.cpp
-termonad.o : termonad.cpp
-	$(cc) -c termonad.cpp
-main.o : main.cpp termonad.hpp xfce4-panel.hpp xmobar.hpp xmonad.hpp
-	$(cc) -c main.cpp
-clean :
-	rm $(objects)
+$(TARGET) : $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^

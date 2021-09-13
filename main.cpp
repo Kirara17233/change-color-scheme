@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "common/scheme.hpp"
+#include "scheme.hpp"
 #include "xmonad.hpp"
 #include "xmobar.hpp"
 #include "xfce4-panel.hpp"

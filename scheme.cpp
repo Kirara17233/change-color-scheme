@@ -1,4 +1,5 @@
 #include "scheme.hpp"
+#include <iostream>
 #include <fstream>
 
 std::uint8_t& scheme::Color::operator[](int index)
@@ -12,7 +13,6 @@ std::uint8_t& scheme::Color::operator[](int index)
   case 2:
     return b;
   };
-  return b;
 }
 
 scheme::Scheme::Scheme(const char* path)

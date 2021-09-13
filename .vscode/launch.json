@@ -9,7 +9,9 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/scheme",
-      "args": [],
+      "args": [
+        "/etc/config/colors/MaterialOcean"
+      ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
