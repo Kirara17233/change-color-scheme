@@ -3,7 +3,6 @@
 #include "scheme.hpp"
 #include "xmonad.hpp"
 #include "xmobar.hpp"
-#include "xfce4-panel.hpp"
 #include "termonad.hpp"
 
 int main(int argc, char* argv[])
@@ -22,6 +21,5 @@ int main(int argc, char* argv[])
   scheme::Scheme scheme(ifs);
   xmonad::change(scheme);
   xmobar::change(scheme);
-  xfce4_panel::change(scheme);
   termonad::change(scheme);
 }

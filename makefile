@@ -1,6 +1,6 @@
 CC = g++
 
-CFLAGS = -g -Wall
+CFLAGS = -Wall -O3
 
 TARGET = scheme
 SRCS = $(wildcard *.cpp)
