@@ -1,6 +1,5 @@
 #include "xfce4-panel.hpp"
 #include <limits>
-#include <iostream>
 #include <iomanip>
 #include <fstream>
 #include "config.hpp"
@@ -9,12 +8,11 @@
 
 void xfce4_panel::change(const scheme::Scheme& scheme)
 {
-  std::fstream fs(config::xmobar);
+  std::fstream fs(config::xfce4_panel);
   for (int i = 0; i < 3; ++i)
   {
-    if (stream::find("double", fs))
+    if (stream::find("double\"", fs))
     {
-      fs.ignore(std::numeric_limits<std::streamsize>::max(), '"');
       fs.ignore(std::numeric_limits<std::streamsize>::max(), '"');
       fs << std::setiosflags(std::ios::fixed) << std::setprecision(6) << (double)scheme[scheme::ColorType::BACKGROUND_COLOR][i] / 255;
     }
