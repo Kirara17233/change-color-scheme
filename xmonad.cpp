@@ -7,7 +7,9 @@
 void xmonad::change(const scheme::Scheme& scheme)
 {
   std::fstream fs(config::xmonad);
-  stream::findAndSetHex("normalBorderColor", scheme[scheme::ColorType::CURSOR_FOREGROUND_COLOR], fs);
-  stream::findAndSetHex("focusedBorderColor", scheme[scheme::ColorType::CURSOR_BACKGROUND_COLOR], fs);
+  for (int i = 0; i < 22; ++i)
+  {
+    stream::setHex(scheme[i], fs);
+  }
   fs.close();
 }
